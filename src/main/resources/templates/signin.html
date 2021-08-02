@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Đăng nhập</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+	<h1 style="color: red; font-family: Arial">Đăng nhập</h1>
+
+	<div class="container-fluid ">
+		<div class="row middle-form">
+			<div class="col-md-6">
+				<form th:action="@{/check-login}" method="post">
+					<div class="form-group">
+						<label for="username">Username</label> <input type="text"
+							class="form-control" id="username" aria-describedby="emailHelp" name="username"
+							placeholder="Enter username">
+						<div th:if="${fail}">
+							<label style="color:red; font-family: Arial">Username hoặc password bị sai</label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label> <input
+							type="password" class="form-control" id="password" name="password"
+							placeholder="Password">
+					</div>
+
+					<button type="submit" class="btn btn-danger">Đăng nhập</button>
+					<br> 
+					<a th:href="@{/signup}" style="text-decoration: none">Bạn
+						chưa có tài khoản? Đăng ký</a>
+				</form>
+			</div>
+			
+			
+			
+		</div>
+	</div>
+
+</body>
+</html>
